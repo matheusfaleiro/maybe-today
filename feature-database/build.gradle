@@ -23,6 +23,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -32,6 +38,7 @@ dependencies {
 
     implementation androidLibrary.room
     implementation androidLibrary.roomRuntime
+    implementation 'androidx.test:core-ktx:1.4.0'
     kapt androidLibrary.roomCompiler
 
     testImplementation testLibrary.jUnit

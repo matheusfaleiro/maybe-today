@@ -1,15 +1,16 @@
 package dev.theuzfaleiro.database.data.dao
 
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Transaction
-import dev.theuzfaleiro.database.data.relations.TasksWithCategory
-import kotlinx.coroutines.flow.Flow
+import dev.theuzfaleiro.database.domain.model.Category
 
 @Dao
 interface CategoryDao {
 
-    @Transaction
-    @Query("SELECT * FROM Task")
-    fun getTaskWithCategories(): Flow<List<TasksWithCategory>>
+    @Query("SELECT * FROM CATEGORY")
+    suspend fun getAllCategories(): List<Category>
+
+    @Insert
+    suspend fun insert(category: Category): Long
 }
