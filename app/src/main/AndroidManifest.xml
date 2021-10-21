@@ -3,12 +3,14 @@
     package="dev.theuzfaleiro.maybetoday">
 
     <application
-        android:allowBackup="true"
+        android:name=".application.MaybeTodayApplication"
+        android:allowBackup="false"
+        android:fullBackupOnly="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Maybetoday">
+        android:theme="@style/Theme.MaybeToday">
         <activity
             android:name=".MainActivity"
             android:exported="true">

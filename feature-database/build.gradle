@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 26
+        targetSdk 31
+        versionCode 1
+        versionName '1.0'
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation library.coreKtx
+
+    implementation androidLibrary.koin
+
+    implementation androidLibrary.room
+    implementation androidLibrary.roomRuntime
+    kapt androidLibrary.roomCompiler
+
+    testImplementation testLibrary.jUnit
+    testImplementation testLibrary.kotest
+    testImplementation testLibrary.archCore
+    testImplementation testLibrary.coroutinesTest
+    testImplementation testAndroidLibrary.roomTesting
+    testImplementation testAndroidLibrary.roboeletric
+}
