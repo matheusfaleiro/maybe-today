@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Dashboard  -->
+    <string name="dashboard_title_do_it_now">Faça agora</string>
+    <string name="dashboard_sub_title_urgent_and_important">Urgente e Importante</string>
+
+    <string name="dashboard_title_decide_when_to_do">Decidir quando fazer</string>
+    <string name="dashboard_sub_title_important_not_urgent">Importante e Não Urgente</string>
+
+    <string name="dashboard_title_delegate_it">Delegar</string>
+    <string name="dashboard_sub_title_urgent_not_important">Urgente e Não Importante</string>
+
+    <string name="dashboard_title_dump_it">Jogue fora</string>
+    <string name="dashboard_sub_title_not_urgent_not_important">Não Urgente e Não Importante</string>
+</resources>

@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "maybe-today"
 include ':app'
 include ':feature-database'
+include ':feature-task'
