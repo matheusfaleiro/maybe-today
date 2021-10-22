@@ -6,6 +6,9 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import dev.theuzfaleiro.database.MaybeTodayDatabase
+import dev.theuzfaleiro.database.domain.model.Category
+import dev.theuzfaleiro.database.domain.model.Importance
+import dev.theuzfaleiro.database.domain.model.Task
 import dev.theuzfaleiro.database.domain.model.Urgency
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -21,11 +24,14 @@ import org.robolectric.annotation.Config
 @ExperimentalCoroutinesApi
 @Config(sdk = [Build.VERSION_CODES.R])
 @RunWith(RobolectricTestRunner::class)
-internal class UrgencyDaoTest {
+internal class TaskDaoTest {
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
+    private lateinit var categoryDao: CategoryDao
+    private lateinit var importanceDao: ImportanceDao
+    private lateinit var taskDao: TaskDao
     private lateinit var urgencyDao: UrgencyDao
 
     private lateinit var maybeTodayDatabase: MaybeTodayDatabase
@@ -39,14 +45,41 @@ internal class UrgencyDaoTest {
             .allowMainThreadQueries()
             .build()
 
+        categoryDao = maybeTodayDatabase.categoryDao()
+        importanceDao = maybeTodayDatabase.importanceDao()
+        taskDao = maybeTodayDatabase.taskDao()
         urgencyDao = maybeTodayDatabase.urgencyDao()
     }
 
     @Test
-    fun shouldSelectUrgencyWhenGetAllUrgenciesFromDatabase() = runBlockingTest {
+    fun shouldSelectTaskWhenGetTasksFromDatabase() = runBlockingTest {
+        categoryDao.insert(Category(1, "Personal"))
+
+        importanceDao.insert(Importance(1, 5))
+
         urgencyDao.insert(Urgency(1, 5))
 
-        urgencyDao.getAllCategories() shouldBe listOf(Urgency(1, 5))
+        taskDao.insert(
+            Task(
+                taskId = 1,
+                categoryId = 1,
+                importanceId = 1,
+                urgencyId = 1,
+                taskTitle = "Finish Maybe Today App",
+                description = "Publish App on Play Store"
+            )
+        )
+
+        taskDao.getAllCategories() shouldBe listOf(
+            Task(
+                taskId = 1,
+                categoryId = 1,
+                importanceId = 1,
+                urgencyId = 1,
+                taskTitle = "Finish Maybe Today App",
+                description = "Publish App on Play Store"
+            )
+        )
     }
 
     @After

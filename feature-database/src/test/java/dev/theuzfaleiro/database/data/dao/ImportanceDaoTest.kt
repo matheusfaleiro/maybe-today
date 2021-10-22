@@ -6,7 +6,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import dev.theuzfaleiro.database.MaybeTodayDatabase
-import dev.theuzfaleiro.database.domain.model.Category
 import dev.theuzfaleiro.database.domain.model.Importance
 import io.kotest.matchers.shouldBe
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -15,9 +14,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
-
-import org.junit.jupiter.api.BeforeEach
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
@@ -36,7 +32,6 @@ internal class ImportanceDaoTest {
 
     @Before
     fun setUp() {
-
         val context = ApplicationProvider.getApplicationContext<Context>()
 
         maybeTodayDatabase = Room
@@ -55,7 +50,7 @@ internal class ImportanceDaoTest {
     }
 
     @After
-    fun tearDown(){
+    fun tearDown() {
         maybeTodayDatabase.close()
     }
 }

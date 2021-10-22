@@ -9,6 +9,6 @@ data class Category(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "ID_CATEGORY")
     val categoryId: Long = 0,
-    @ColumnInfo(name = "DESC_NAME")
+    @ColumnInfo(name = "NAME")
     val name: String
 )

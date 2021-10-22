@@ -32,7 +32,6 @@ internal class CategoryDaoTest {
 
     @Before
     fun setUp() {
-
         val context = ApplicationProvider.getApplicationContext<Context>()
 
         maybeTodayDatabase = Room
@@ -51,7 +50,7 @@ internal class CategoryDaoTest {
     }
 
     @After
-    fun tearDown(){
+    fun tearDown() {
         maybeTodayDatabase.close()
     }
 }

@@ -9,6 +9,6 @@ data class Importance(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "ID_IMPORTANCE")
     val importanceId: Long,
-    @ColumnInfo(name = "INT_LEVEL")
+    @ColumnInfo(name = "LEVEL")
     val level: Int
 )

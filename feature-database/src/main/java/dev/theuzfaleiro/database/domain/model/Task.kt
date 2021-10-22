@@ -29,7 +29,7 @@ import androidx.room.PrimaryKey
     ]
 )
 data class Task(
-    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id")
+    @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "ID_TASK")
     val taskId: Long = 0,
     @ColumnInfo(name = "ID_CATEGORY", index = true)
     val categoryId: Long,
@@ -37,8 +37,8 @@ data class Task(
     val importanceId: Long,
     @ColumnInfo(name = "ID_URGENCY", index = true)
     val urgencyId: Long,
-    @ColumnInfo(name = "taskTitle")
+    @ColumnInfo(name = "TITLE")
     val taskTitle: String,
-    @ColumnInfo(name = "taskDescription")
+    @ColumnInfo(name = "DESCRIPTION")
     val description: String,
 )
