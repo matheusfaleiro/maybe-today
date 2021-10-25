@@ -1,5 +1,7 @@
 <resources>
     <!--  Dashboard  -->
+    <string name="dashboard_title_my_dashboard">My Dashboard</string>
+
     <string name="dashboard_title_do_it_now">Do it now</string>
     <string name="dashboard_sub_title_urgent_and_important">Urgent and Important</string>
 

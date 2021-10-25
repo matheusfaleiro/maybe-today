@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--  Dashboard  -->
+    <string name="dashboard_title_my_dashboard">Meu Painel</string>
+
     <string name="dashboard_title_do_it_now">Faça agora</string>
     <string name="dashboard_sub_title_urgent_and_important">Urgente e Importante</string>
 

@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
-        android:text="My Dashboard"
+        android:text="@string/dashboard_title_my_dashboard"
+        android:fontFamily="@font/avenir_bold"
         android:textColor="@color/black"
         android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +39,9 @@
         android:layout_marginBottom="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewDashboard"
+        app:layout_constraintVertical_bias="0.0"
         tools:listitem="@layout/item_not_important_not_urgent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
