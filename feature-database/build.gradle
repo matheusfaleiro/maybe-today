@@ -32,31 +32,18 @@ android {
 }
 
 dependencies {
-    implementation project(':feature-database')
-
-    implementation library.coreKtx
-
-    implementation androidLibrary.appCompat
-    implementation androidLibrary.constraintLayout
-    implementation androidLibrary.recyclerView
-
-    implementation androidLibrary.lifecycleViewModel
-    implementation androidLibrary.lifecycleLiveData
-
-    implementation androidLibrary.navigationUi
-    implementation androidLibrary.navigationFragment
-
     implementation androidLibrary.koin
 
-    testImplementation testLibrary.jUnit
-    testImplementation testLibrary.mockk
-    testImplementation testLibrary.kotest
-    testImplementation testLibrary.coroutinesTest
-    testImplementation testLibrary.core
+    implementation androidLibrary.room
+    implementation androidLibrary.roomRuntime
+    kapt androidLibrary.roomCompiler
 
-    testImplementation testAndroidLibrary.roboeletric
+    testImplementation testLibrary.kotest
     testImplementation testLibrary.archCore
 
-    androidTestImplementation testAndroidLibrary.jUnit
-    androidTestImplementation testAndroidLibrary.espresso
+    testImplementation testAndroidLibrary.jUnit
+    testImplementation testLibrary.core
+    testImplementation testLibrary.coroutinesTest
+    testImplementation testAndroidLibrary.roomTesting
+    testImplementation testAndroidLibrary.roboeletric
 }
