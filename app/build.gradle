@@ -25,6 +25,7 @@ android {
 }
 
 dependencies {
+    implementation project(':feature-task')
     implementation project(':feature-database')
 
     implementation androidLibrary.koin
