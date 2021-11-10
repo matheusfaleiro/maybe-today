@@ -2,6 +2,7 @@ package dev.theuzfaleiro.maybetoday.application
 
 import android.app.Application
 import dev.theuzfaleiro.database.di.databaseModule
+import dev.theuzfaleiro.maybetoday.di.taskModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidFileProperties
 import org.koin.android.ext.koin.androidLogger
@@ -19,7 +20,7 @@ class MaybeTodayApplication : Application() {
 
             androidFileProperties()
 
-            modules(databaseModule)
+            modules(databaseModule, taskModule)
         }
     }
 }
